@@ -3,17 +3,39 @@ import sys
 
 def parse():
     result: dict = {}
-    for i in sys.argv:
+    j = 0
+    for j in range(1, len(sys.argv)):
+        i = sys.argv[j]
+        # check if string has :
         if ":" not in i:
             print(f"Error - invalid parameter '{i}'")
-        value: list = i.split(":")
-
+            continue
+        key_val: list = i.split(":")
+        # Check if value is int
         try:
-            int(value[1])
+            int(key_val[1])
         except Exception as e:
-            print(f"Quantity error for ’{value[0]}’:")
-        result[value[0]] = value[1]
+            print(f"Quantity error for ’{key_val[0]}’: {e}")
+            continue
+        # Check Redundant
+        value = result.get(key_val[0], -1)
+        if value == -1:
+            result[key_val[0]] = int(key_val[1])
+        else:
+            print(f"Redundant item ’{key_val[0]}’ - discarding")
 
+    print(f"Got inventory: {result}")
+    Item_list = list(result.keys())
+    print(f"Item list: {Item_list}")
+    summation = sum(result.values())
+    print(f"Total quantity of the {len(Item_list)} items: {summation}")
+    for i in Item_list:
+        print(
+            f"Item {i} represents {(result.get(i,-1) / summation) * 100:.1f}%"
+        )
+
+    print(f"Item most abundant: {
+    } with quantity {}")
 
 if __name__ == "__main__":
     parse()
