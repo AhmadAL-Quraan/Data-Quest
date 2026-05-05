@@ -4,14 +4,22 @@ import typing
 
 # Generator [yield value,send type , return type ]
 def gen_event() -> typing.Generator[tuple[str, str], None, None]:
-    players = ["bob", "alice", "dylan", "charlie"]
-    actions = ["run", "sleep", "grab", "climb", "swim", "release", "move"]
+    players: list[str] = ["bob", "alice", "dylan", "charlie"]
+    actions: list[str] = [
+        "run",
+        "sleep",
+        "grab",
+        "climb",
+        "swim",
+        "release",
+        "move",
+    ]
 
     for i in range(1000):
-        player: list = random.sample(players, random.randint(1, 1))
-        actions: list = random.sample(actions, random.randint(1, 1))
+        player = random.sample(players, random.randint(1, 1))
+        action = random.sample(actions, random.randint(1, 1))
 
-        yield (player[0], actions[0])
+        yield (player[0], action[0])
 
 
 def build_event() -> typing.Generator[list[tuple[str, str]], None, None]:
@@ -33,10 +41,10 @@ def build_event() -> typing.Generator[list[tuple[str, str]], None, None]:
 
 if __name__ == "__main__":
 
-    counter = 0
+    counter: int = 0
     for i in gen_event():
         print(f"Event {counter}: Player {str(i[0])} action {str(i[1])}")
         counter += 1
-    gen = build_event()
-    for i in range(10):
+    gen: typing.Generator[list[tuple[str, str]], None, None] = build_event()
+    for _ in range(10):
         print(f"Remains in list {next(gen)}")

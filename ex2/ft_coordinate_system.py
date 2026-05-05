@@ -2,11 +2,11 @@ import math
 
 
 # Tuples are : ordered, immutable, allow duplicates, heterogeneous
-def get_player_pos():
+def get_player_pos() -> None:
     clean_data: tuple[float, float, float] = (0.0, 0.0, 0.0)
     data: str = ""
     invalid: bool = True
-    user_input = ""
+    user_input: list[str] = []
     while invalid:
         clean_data = (0.0, 0.0, 0.0)
         user_input = input(
@@ -37,7 +37,7 @@ def get_player_pos():
     print(f"Got first tuple: {clean_data}")
     print(f"It includes: X={x}, Y={y}, Z={z}")
 
-    print(f"Distance to center: { math.sqrt((x**2 + y**2 + z**2)):.6f}")
+    print(f"Distance to center: {math.sqrt((x**2 + y**2 + z**2)):.6f}")
 
 
 if __name__ == "__main__":

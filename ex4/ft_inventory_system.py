@@ -1,16 +1,16 @@
 import sys
 
 
-def parse():
-    result: dict = {}
-    j = 0
+def parse() -> None:
+    result: dict[str, int] = {}
+    j: int = 0
     for j in range(1, len(sys.argv)):
         i = sys.argv[j]
         # check if string has :
         if ":" not in i:
             print(f"Error - invalid parameter '{i}'")
             continue
-        key_val: list = i.split(":")
+        key_val: list[str] = i.split(":")
         # Check if value is int
         try:
             int(key_val[1])
@@ -18,7 +18,7 @@ def parse():
             print(f"Quantity error for ’{key_val[0]}’: {e}")
             continue
         # Check Redundant
-        value = result.get(key_val[0], -1)
+        value: int = result.get(key_val[0], -1)
         if value == -1:
             result[key_val[0]] = int(key_val[1])
         else:
@@ -31,13 +31,13 @@ def parse():
     print(f"Total quantity of the {len(Item_list)} items: {summation}")
     for i in Item_list:
         print(
-            f"Item {i} represents {(result.get(i,-1) / summation) * 100:.1f}%"
+            f"Item {i} represents {(result.get(i, -1) / summation) * 100:.1f}%"
         )
 
     save_max: str = ""
     save_min: str = ""
-    value_max = 0
-    value_min = 99999999
+    value_max: int = 0
+    value_min: int = 99999999
     for key, value in result.items():
         if value > value_max:
             value_max = value
