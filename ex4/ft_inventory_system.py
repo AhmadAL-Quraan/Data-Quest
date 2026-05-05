@@ -34,8 +34,25 @@ def parse():
             f"Item {i} represents {(result.get(i,-1) / summation) * 100:.1f}%"
         )
 
-    print(f"Item most abundant: {
-    } with quantity {}")
+    save_max: str = ""
+    save_min: str = ""
+    value_max = 0
+    value_min = 99999999
+    for key, value in result.items():
+        if value > value_max:
+            value_max = value
+            save_max = key
+        if value < value_min:
+            value_min = value
+            save_min = key
+
+    print(f"Item most abundant: {save_max} with quantity {value_max}")
+    print(f"Item least abundant: {save_min} with quantity {value_min}")
+
+    result["magic_item"] = 1  # Or result.update({"magic_item":1})
+
+    print(f"Updated inventory: {result}")
+
 
 if __name__ == "__main__":
     parse()

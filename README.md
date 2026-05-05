@@ -14,8 +14,16 @@
 - Elements are unique .
 - Unindexed .
 
+- Takes O(1) to add, O(n) to delete as worst case .
+> set [methods](https://www.w3schools.com/python/python_ref_set.asp)
+
+
 
  
+
+
+
+
 ### Intersection, union, difference and symmetric difference
 
 * Sets in python support several set theory operations: 
@@ -31,4 +39,14 @@
 
 * `random.sample(data, number of elements)` : a unique list of elements from a data (list, set ,...). It chooses each element at most once.
 * `random.randint(min, max)`: choose a number between min and max  (included)
+
+
+## Dictionary 
+
+* Like hash map in C++, Java
+* Hashed Key, value pair
+* Take O(1) to add, delete, update
+
+> All dict [methods](https://www.w3schools.com/python/python_ref_dictionary.asp)
+![](pic/dict_methods.png)
 
