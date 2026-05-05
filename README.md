@@ -48,5 +48,27 @@
 * Take O(1) to add, delete, update
 
 > All dict [methods](https://www.w3schools.com/python/python_ref_dictionary.asp)
-![](pic/dict_methods.png)
+![](pic/dict_methods.png) 
+## Generations 
+
+- Any function uses yield, become a generator function when called.
+- Calling it does not execute it immediately — it returns a generator object.
+- Make data stream on the fly instead of saving them in memory.
+- Generators produce values lazily (on demand), instead of storing everything in memory.
+- Execution is paused at each yield and resumes from there on the next call.
+- It saves the status for each call (local var, current pos, call stack), when resumed (with `next()`) it continues from where it left off.
+- A generator remembers its state between yields, not per function call.
+- It’s one generator instance that keeps its evolving state across resumptions.
+```python 
+gen1 = my_generator()
+gen2 = my_generator() 
+# These are two different instances
+```
+- Two ways to use generator functions:
+  
+  1) `next(gen)`
+  2) `for i in generator_function`
+
+> When using typing -> typing.Generator[yield return , send_type, return_type]
+
 
