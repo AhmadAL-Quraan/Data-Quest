@@ -2,6 +2,7 @@
 
 ## Tuple 
 
+> [tuple methods](https://www.w3schools.com/python/python_ref_tuple.asp)
 * Ordered.
 * Immutable.
 * Could have any data type.
@@ -9,13 +10,13 @@
 
 ## Set 
 
+> set [methods](https://www.w3schools.com/python/python_ref_set.asp)
 - Hashed.
 - Unordered.
 - Elements are unique .
 - Unindexed .
 
 - Takes O(1) to add, O(n) to delete as worst case .
-> set [methods](https://www.w3schools.com/python/python_ref_set.asp)
 
 
 
@@ -24,7 +25,7 @@
 
 
 
-### Intersection, union, difference and symmetric difference
+### Intersection, union, difference and symmetric difference in sets
 
 * Sets in python support several set theory operations: 
 1) Union: combine between two sets or more.
@@ -43,12 +44,11 @@
 
 ## Dictionary 
 
+> All dict [methods](https://www.w3schools.com/python/python_ref_dictionary.asp)
 * Like hash map in C++, Java
 * Hashed Key, value pair
 * Take O(1) to add, delete, update
 
-> All dict [methods](https://www.w3schools.com/python/python_ref_dictionary.asp)
-![](pic/dict_methods.png) 
 ## Generations 
 
 - Any function uses yield, become a generator function when called.
@@ -67,8 +67,11 @@ gen2 = my_generator()
 - Two ways to use generator functions:
   
   1) `next(gen)`
-  2) `for i in generator_function`
+  2) `for i in generator_function()` -> the `for` loop calls `next()` repeatedly on the generator object.
 
+      `yield` makes the function return a generator object, and a generator objects always iterable.
+
+* When the functions end, and the yields can't return anything, python raises `StopIteration` error.
 > When using typing -> typing.Generator[yield return , send_type, return_type]
 
 

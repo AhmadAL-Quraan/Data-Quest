@@ -46,8 +46,9 @@ def parse() -> None:
             value_min = value
             save_min = key
 
-    print(f"Item most abundant: {save_max} with quantity {value_max}")
-    print(f"Item least abundant: {save_min} with quantity {value_min}")
+    if len(sys.argv) != 1:
+        print(f"Item most abundant: {save_max} with quantity {value_max}")
+        print(f"Item least abundant: {save_min} with quantity {value_min}")
 
     result["magic_item"] = 1  # Or result.update({"magic_item":1})
 

@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("No arguments provided!")
     else:
         print(f"Arguments\
- received: {total_arg}")
+ received: {total_arg - 1}")
         for i in range(len(sys.argv)):
             if i != 0:
                 print(f"Argument {i}: {sys.argv[i]}")

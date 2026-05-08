@@ -20,9 +20,7 @@ if __name__ == "__main__":
     print(f"New list of\
  capitalized names only: {[x for x in names if x == x.capitalize()]}\n")
 
-    dic: dict[str, int] = {}
-    for x in names_capital:
-        dic[x] = random.randint(1, 1000)
+    dic: dict[str, int] = {x: random.randint(1, 1000) for x in names_capital}
 
     print(f"Score dict: {dic}")
     average: float = sum(value for key, value in dic.items()) / len(dic)
