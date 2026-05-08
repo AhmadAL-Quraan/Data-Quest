@@ -56,15 +56,15 @@ if __name__ == "__main__":
     print(f"\nCommon achievements: \
 {(player1[1] & player2[1] & player3[1] & player4[1])}\n")
 
-    print((player2[1] | player3[1] | player4[1]))
-    diff1 = player2[1] - (player1[1] | player3[1] | player4[1])
-    diff2 = player3[1] - (player2[1] | player1[1] | player4[1])
-    diff3 = player4[1] - (player2[1] | player3[1] | player1[1])
+    diff1 = player1[1] - (player2[1] | player3[1] | player4[1])
+    diff2 = player2[1] - (player1[1] | player3[1] | player4[1])
+    diff3 = player3[1] - (player2[1] | player1[1] | player4[1])
+    diff4 = player4[1] - (player2[1] | player3[1] | player1[1])
     print(f"Only Alice has: \
 {diff1}\n" f"Only Bob has: \
-{diff1}\n" f"Only Dylan has:\
-{diff2}\n" f"Only Charlie has: \
-{diff3}\n")
+{diff2}\n" f"Only Dylan has:\
+{diff3}\n" f"Only Charlie has: \
+{diff4}\n")
     print(f"Alice is missing: {union - player1[1]}")
     print(f"Bob is missing: {union - player2[1]}")
     print(f"Charlie is missing: {union - player4[1]}")
