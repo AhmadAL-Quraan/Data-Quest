@@ -1,5 +1,18 @@
 # Data archivist  
 
+* This project made to learn in-depth about python DS.
+
+
+* Each exercise discussed different topic:
+
+  -  ex0: The use of `sys.argv` list.
+  - ex1: advanced list operations and methods.
+  - ex2: tuples .
+  - ex3: set operations and methods.
+  - ex4: Dictionaries.
+  - ex5: Generators in python.
+  - ex6: list comprehension.
+
 ## Tuple 
 
 > [tuple methods](https://www.w3schools.com/python/python_ref_tuple.asp)
