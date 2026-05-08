@@ -12,15 +12,23 @@ def parse() -> None:
             continue
         key_val: list[str] = i.split(":")
         # Check if value is int
+        value_input = 0
         try:
-            int(key_val[1])
+            value_input = int(key_val[1])
+
         except Exception as e:
             print(f"Quantity error for ’{key_val[0]}’: {e}")
             continue
         # Check Redundant
         value: int = result.get(key_val[0], -1)
         if value == -1:
-            result[key_val[0]] = int(key_val[1])
+            if value_input > 0:
+
+                result[key_val[0]] = int(key_val[1])
+            else:
+                print(
+                    f"Value must be greater than zero for  {key_val[0]}: {value_input}  , there can't be negative or zero quantity of something"
+                )
         else:
             print(f"Redundant item ’{key_val[0]}’ - discarding")
 
@@ -46,7 +54,7 @@ def parse() -> None:
             value_min = value
             save_min = key
 
-    if len(sys.argv) != 1:
+    if len(result):
         print(f"Item most abundant: {save_max} with quantity {value_max}")
         print(f"Item least abundant: {save_min} with quantity {value_min}")
 

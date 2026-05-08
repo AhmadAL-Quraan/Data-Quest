@@ -21,7 +21,6 @@ def gen_player_achievements() -> set[str]:
         "MasterExplorer",
         "Treasure Hunter",
         "First Steps",
-        "Collector Supreme",
         "Untouchable",
         "Sharp Mind",
         "Strategist",
