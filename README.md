@@ -6,12 +6,12 @@
 * Each exercise discussed different topic:
 
   -  ex0: The use of `sys.argv` list.
-  - ex1: advanced list operations and methods.
-  - ex2: tuples .
-  - ex3: set operations and methods.
-  - ex4: Dictionaries.
-  - ex5: Generators in python.
-  - ex6: list comprehension.
+  - ex1: **Advanced list operations and methods**.
+  - ex2: **Tuples** .
+  - ex3: **Set operations and methods**.
+  - ex4: **Dictionaries**.
+  - ex5: **Generators in python**.
+  - ex6: **List comprehension**.
 
 ## Tuple 
 
